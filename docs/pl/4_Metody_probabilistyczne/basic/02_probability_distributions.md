@@ -18,11 +18,7 @@ Analiza tych modeli pozwala formalnie opisać doświadczenia losowe i obliczać 
 
 ---
 
-## Lista zadań — Rozkłady prawdopodobieństwa
-
-### Część I — Modelowanie i przestrzenie prób
-
-#### Zadanie 1 — Model dwumianowy (kontrola jakości)
+## Zadanie 1 — Model dwumianowy (kontrola jakości)
 
 W fabryce produkowane są śruby. Każda śruba może być **dobra** albo **wadliwa**.  
 Prawdopodobieństwo, że losowo wybrana śruba jest wadliwa, wynosi \(p\).
@@ -38,7 +34,7 @@ Rozważamy doświadczenie polegające na sprawdzeniu **3 kolejnych śrub**.
 
 ---
 
-#### Zadanie 2 — Model hipergeometryczny (pobieranie z partii)
+## Zadanie 2 — Model hipergeometryczny (pobieranie z partii)
 
 Magazyn zawiera **20 komponentów**, z czego **5 jest wadliwych**, a **15 sprawnych**.
 
@@ -54,7 +50,7 @@ Losowo wybieramy **4 komponenty bez zwracania** do kontroli.
 
 ---
 
-#### Zadanie 3 — Model geometryczny (oczekiwanie na pierwsze zdarzenie)
+## Zadanie 3 — Model geometryczny (oczekiwanie na pierwsze zdarzenie)
 
 W drukarni każda wydrukowana strona może zawierać **błąd druku** z prawdopodobieństwem \(p\).
 
@@ -69,7 +65,7 @@ Doświadczenie polega na obserwowaniu kolejnych stron aż do pojawienia się **p
 
 ---
 
-#### Zadanie 4 — Model Poissona (napływ zdarzeń)
+## Zadanie 4 — Model Poissona (napływ zdarzeń)
 
 Usługa internetowa otrzymuje średnio **3 zgłoszenia błędów na godzinę**.
 
@@ -84,7 +80,7 @@ Zakładamy, że liczba zgłoszeń w danym przedziale czasu ma **rozkład Poisson
 
 ---
 
-#### Zadanie 5 — Model wielomianowy (kategorie wyników)
+## Zadanie 5 — Model wielomianowy (kategorie wyników)
 
 Gracz rzuca **kostką 5 razy**.
 
@@ -103,9 +99,7 @@ Wyniki grupujemy w trzy kategorie:
 
 ---
 
-### Część II — Obliczenia
-
-#### Zadanie 6 — Model dwumianowy
+## Zadanie 6 — Model dwumianowy
 
 Prawdopodobieństwo wyprodukowania wadliwej części wynosi **0.04**.
 
@@ -118,7 +112,7 @@ Oblicz prawdopodobieństwo, że:
 
 ---
 
-#### Zadanie 7 — Model hipergeometryczny
+## Zadanie 7 — Model hipergeometryczny
 
 Pudełko zawiera:
 
@@ -131,7 +125,7 @@ Oblicz prawdopodobieństwo, że w próbie będą **dokładnie 2 wadliwe żarówk
 
 ---
 
-#### Zadanie 8 — Model geometryczny
+## Zadanie 8 — Model geometryczny
 
 Prawdopodobieństwo błędu podczas kompilacji programu wynosi **0.1** dla każdej kompilacji.
 
@@ -144,7 +138,7 @@ Oblicz prawdopodobieństwo, że:
 
 ---
 
-#### Zadanie 9 — Model Poissona
+## Zadanie 9 — Model Poissona
 
 Centrum obsługi klienta otrzymuje średnio **5 zgłoszeń na godzinę**.
 
@@ -155,7 +149,7 @@ Oblicz prawdopodobieństwo, że w ciągu jednej godziny:
 
 ---
 
-#### Zadanie 10 — Model wielomianowy
+## Zadanie 10 — Model wielomianowy
 
 Pudełko zawiera cukierki trzech smaków:
 

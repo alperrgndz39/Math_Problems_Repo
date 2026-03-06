@@ -18,11 +18,7 @@ The analysis of these models allows us to formally describe random experiments a
 
 ---
 
-## Tasks — Probability Distributions
-
-### Part I — Modeling and Sample Spaces
-
-#### Task 1 — Binomial Model (Quality Control)
+## Task 1 — Binomial Model (Quality Control)
 
 In a factory, screws are produced. Each screw can be either **good** or **defective**.  
 The probability that a randomly selected screw is defective equals \(p\).
@@ -38,7 +34,7 @@ We consider an experiment consisting of checking **3 consecutive screws**.
 
 ---
 
-#### Task 2 — Hypergeometric Model (Sampling from a Batch)
+## Task 2 — Hypergeometric Model (Sampling from a Batch)
 
 A warehouse contains **20 components**, of which **5 are defective** and **15 are functional**.
 
@@ -54,7 +50,7 @@ We randomly select **4 components without replacement** for inspection.
 
 ---
 
-#### Task 3 — Geometric Model (Waiting for the First Event)
+## Task 3 — Geometric Model (Waiting for the First Event)
 
 In a printing house, each printed page may contain a **printing error** with probability \(p\).
 
@@ -69,7 +65,7 @@ The experiment consists of observing consecutive pages until the **first error**
 
 ---
 
-#### Task 4 — Poisson Model (Arrival of Events)
+## Task 4 — Poisson Model (Arrival of Events)
 
 A web service receives on average **3 error reports per hour**.
 
@@ -84,7 +80,7 @@ We assume that the number of reports in a given time interval follows a **Poisso
 
 ---
 
-#### Task 5 — Multinomial Model (Categories of Outcomes)
+## Task 5 — Multinomial Model (Categories of Outcomes)
 
 A player rolls a **die 5 times**.
 
@@ -103,9 +99,7 @@ The outcomes are grouped into three categories:
 
 ---
 
-### Part II — Exploration and Calculations
-
-#### Task 6 — Binomial Model
+## Task 6 — Binomial Model
 
 The probability of producing a defective part is **0.04**.
 
@@ -118,7 +112,7 @@ Calculate the probability that:
 
 ---
 
-#### Task 7 — Hypergeometric Model
+## Task 7 — Hypergeometric Model
 
 A box contains:
 
@@ -131,7 +125,7 @@ Calculate the probability that the sample contains **exactly 2 defective bulbs**
 
 ---
 
-#### Task 8 — Geometric Model
+## Task 8 — Geometric Model
 
 The probability of an error in program compilation is **0.1** for each compilation.
 
@@ -144,7 +138,7 @@ Calculate the probability that:
 
 ---
 
-#### Task 9 — Poisson Model
+## Task 9 — Poisson Model
 
 A customer service center receives on average **5 requests per hour**.
 
@@ -155,7 +149,7 @@ Calculate the probability that during one hour there will be:
 
 ---
 
-#### Task 10 — Multinomial Model
+## Task 10 — Multinomial Model
 
 A box contains candies of three flavors:
 
