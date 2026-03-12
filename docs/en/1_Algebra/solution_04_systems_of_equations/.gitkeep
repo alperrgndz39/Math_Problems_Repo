@@ -1,0 +1,400 @@
+# Systems of Linear Equations — Solutions
+
+---
+
+# Ex 1
+
+Solve
+
+$$
+\begin{aligned}
+2x+3y &= 5\\
+x-4y &= -2
+\end{aligned}
+$$
+
+## Gaussian Elimination
+
+Augmented matrix:
+
+$$
+\begin{bmatrix}
+2 & 3 & | & 5\\
+1 & -4 & | & -2
+\end{bmatrix}
+$$
+
+Swap rows:
+
+$$
+\begin{bmatrix}
+1 & -4 & | & -2\\
+2 & 3 & | & 5
+\end{bmatrix}
+$$
+
+Row operation
+
+$$
+R_2 = R_2 - 2R_1
+$$
+
+$$
+\begin{bmatrix}
+1 & -4 & | & -2\\
+0 & 11 & | & 9
+\end{bmatrix}
+$$
+
+$$
+y=\frac{9}{11}
+$$
+
+Substitute into first equation
+
+$$
+x -4\left(\frac{9}{11}\right)=-2
+$$
+
+$$
+x=\frac{14}{11}
+$$
+
+**Solution**
+
+$$
+x=\frac{14}{11}, \qquad y=\frac{9}{11}
+$$
+
+---
+
+# Ex 2
+
+$$
+\begin{aligned}
+x+y+z &=6\\
+2x-y+3z &=14\\
+-x+2y-z &=-2
+\end{aligned}
+$$
+
+Augmented matrix
+
+$$
+\begin{bmatrix}
+1&1&1&|&6\\
+2&-1&3&|&14\\
+-1&2&-1&|&-2
+\end{bmatrix}
+$$
+
+After elimination
+
+$$
+\begin{bmatrix}
+1&1&1&|&6\\
+0&-3&1&|&2\\
+0&3&0&|&4
+\end{bmatrix}
+$$
+
+Solve:
+
+$$
+y=\frac{4}{3}
+$$
+
+Substitute back
+
+$$
+x=-\frac{4}{3}, \qquad z=6
+$$
+
+**Solution**
+
+$$
+(x,y,z)=\left(-\frac{4}{3},\frac{4}{3},6\right)
+$$
+
+---
+
+# Ex 3
+
+Parametric system
+
+$$
+\begin{aligned}
+x+\lambda y &=1\\
+2x+(1+\lambda)y &=3
+\end{aligned}
+$$
+
+Coefficient matrix
+
+$$
+A=
+\begin{pmatrix}
+1 & \lambda\\
+2 & 1+\lambda
+\end{pmatrix}
+$$
+
+Determinant
+
+$$
+\det(A)=1(1+\lambda)-2\lambda
+$$
+
+$$
+\det(A)=1-\lambda
+$$
+
+### Case 1
+
+If
+
+$$
+\lambda \ne 1
+$$
+
+the system has **one unique solution**.
+
+### Case 2
+
+If
+
+$$
+\lambda =1
+$$
+
+the system becomes
+
+$$
+x+y=1
+$$
+
+$$
+x+y=\frac{3}{2}
+$$
+
+Contradiction → **no solution**.
+
+| λ | Result |
+|---|---|
+| λ ≠ 1 | unique solution |
+| λ = 1 | no solution |
+
+---
+
+# Ex 4
+
+Matrix
+
+$$
+A=
+\begin{pmatrix}
+1 & 1 & 1\\
+0 & 2 & -1\\
+2 & -1 & 3
+\end{pmatrix}
+$$
+
+Vector
+
+$$
+b=
+\begin{pmatrix}
+4\\
+1\\
+3
+\end{pmatrix}
+$$
+
+Solution
+
+$$
+x_1=-7,\quad x_2=4,\quad x_3=7
+$$
+
+Check:
+
+1st equation
+
+$$
+-7+4+7=4
+$$
+
+2nd equation
+
+$$
+2(4)-7=1
+$$
+
+3rd equation
+
+$$
+2(-7)-4+21=3
+$$
+
+✔ Correct.
+
+---
+
+# Ex 5
+
+## a)
+
+$$
+x_1=3,\quad x_2=-2,\quad x_3=2
+$$
+
+---
+
+## b)
+
+Infinite solutions
+
+$$
+x_3=t
+$$
+
+$$
+x_1=-7t-10
+$$
+
+$$
+x_2=-5t-6
+$$
+
+---
+
+## c)
+
+**No solution**
+
+---
+
+## d)
+
+Two equations / three unknowns → infinite solutions
+
+$$
+x_3=t
+$$
+
+$$
+x_1=11t-1
+$$
+
+$$
+x_2=14t-2
+$$
+
+---
+
+## e)
+
+From first two equations
+
+$$
+x_1=-\frac{8}{13}, \qquad x_2=-\frac{10}{13}
+$$
+
+Third equation requires
+
+$$
+a=-\frac{6}{13}
+$$
+
+| a | Result |
+|---|---|
+| $a=-6/13$ | unique solution |
+| otherwise | no solution |
+
+---
+
+## f)
+
+$$
+x_1=9
+$$
+
+$$
+x_2=-38
+$$
+
+$$
+x_3=-6
+$$
+
+---
+
+## g)
+
+**No solution**
+
+---
+
+## h)
+
+Homogeneous system → infinite solutions
+
+$$
+x_3=t
+$$
+
+$$
+x_1=-7t
+$$
+
+$$
+x_2=-5t
+$$
+
+---
+
+## i)
+
+Only trivial solution
+
+$$
+x_1=x_2=x_3=0
+$$
+
+---
+
+## j)
+
+$$
+x_1=-2,\quad x_2=1,\quad x_3=-1
+$$
+
+---
+
+## k)
+
+Infinite solutions
+
+$$
+x_3=t
+$$
+
+$$
+x_1=2-x_3
+$$
+
+$$
+x_2=6x_3-3
+$$
+
+---
+
+## l)
+
+First two equations give
+
+$$
+x_1=-\frac{17}{13}, \qquad x_2=\frac{2}{13}
+$$
+
+Third equation not satisfied → **No solution**
