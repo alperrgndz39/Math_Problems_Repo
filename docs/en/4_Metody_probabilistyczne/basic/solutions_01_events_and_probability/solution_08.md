@@ -1,437 +1,227 @@
-# Task 8 — Events and Probabilities in Card Drawing
+Task 8 - Events and Probabilities in Card Drawing
 
-We refer to the sample spaces from Task 3.
+## Problem
 
-A standard deck has:
+Refer to **Task 3**, where the sample spaces for drawing cards from a standard 52-card deck were defined.
 
-- 52 cards
-- 13 hearts
-- 4 kings
-- 4 aces
-- 12 face cards \((J,Q,K)\)
-- 40 non-face cards
+Assume the deck is well-shuffled. In each experiment, every ordered sequence of draws is equally likely.
 
-Since the deck is well-shuffled, all elementary outcomes in the relevant sample space are **equally likely**.
+First assign probabilities to all elementary outcomes in the sample spaces $\Omega_1$, $\Omega_2$, and $\Omega_2'$.
 
----
+Then describe the events as subsets of the sample space and compute their probabilities.
 
-## 1. Probabilities of Elementary Outcomes
+## Solution
 
-### Sample space \(\Omega_1\) — one card drawn
+### Elementary outcome probabilities
 
-\[
-\Omega_1=\{\text{all 52 cards}\}
-\]
+For one card drawn, each elementary outcome in $\Omega_1$ has probability
 
-So:
+$$
+\frac{1}{52}
+$$
 
-\[
-|\Omega_1|=52
-\]
+For two draws with replacement, each elementary outcome in $\Omega_2$ has probability
 
-and each elementary outcome has probability
+$$
+\frac{1}{52^2} = \frac{1}{2704}
+$$
 
-\[
-P(\{\omega\})=\frac{1}{52}
-\qquad (\omega\in\Omega_1)
-\]
+For two draws without replacement, each elementary outcome in $\Omega_2'$ has probability
 
----
+$$
+\frac{1}{52 \cdot 51} = \frac{1}{2652}
+$$
 
-### Sample space \(\Omega_2\) — two cards drawn with replacement
+### One card drawn
 
-\[
-\Omega_2=\{(c_1,c_2)\mid c_1,c_2\in D\}
-\]
-
-where \(D\) is the set of all 52 cards.
-
-So:
-
-\[
-|\Omega_2|=52^2=2704
-\]
-
-and each elementary outcome has probability
-
-\[
-P(\{(c_1,c_2)\})=\frac{1}{2704}
-\qquad ((c_1,c_2)\in\Omega_2)
-\]
-
----
-
-### Sample space \(\Omega_2'\) — two cards drawn without replacement
-
-\[
-\Omega_2'=\{(c_1,c_2)\mid c_1,c_2\in D,\ c_1\neq c_2\}
-\]
-
-So:
-
-\[
-|\Omega_2'|=52\cdot 51=2652
-\]
-
-and each elementary outcome has probability
-
-\[
-P(\{(c_1,c_2)\})=\frac{1}{2652}
-\qquad ((c_1,c_2)\in\Omega_2')
-\]
-
----
-
-# 2. One Card Drawn
-
-## Event \(A_1\) — the card is a heart
+#### Event $A_1$
 
 There are 13 hearts, so
 
-\[
-A_1=\{\text{all hearts}\}
-\]
+$$
+A_1 = \{c \in \Omega_1 \mid c \text{ is a heart}\}
+$$
 
-and
+Hence,
 
-\[
-P(A_1)=\frac{13}{52}=\frac{1}{4}
-\]
+$$
+P(A_1) = \frac{13}{52} = \frac{1}{4}
+$$
 
----
-
-## Event \(B_1\) — the card is a king
+#### Event $B_1$
 
 There are 4 kings, so
 
-\[
-B_1=\{\text{all kings}\}
-\]
+$$
+B_1 = \{c \in \Omega_1 \mid c \text{ is a king}\}
+$$
 
-and
+Hence,
 
-\[
-P(B_1)=\frac{4}{52}=\frac{1}{13}
-\]
+$$
+P(B_1) = \frac{4}{52} = \frac{1}{13}
+$$
 
----
+#### Event $C_1$
 
-## Event \(C_1\) — the card is not a face card
+Face cards are J, Q, K. There are
 
-Face cards are \(J,Q,K\), so there are:
+$$
+3 \cdot 4 = 12
+$$
 
-\[
-3\cdot 4 = 12
-\]
+face cards, so the number of non-face cards is
 
-face cards, hence:
+$$
+52 - 12 = 40
+$$
 
-\[
-52-12=40
-\]
+Hence,
 
-non-face cards.
+$$
+P(C_1) = \frac{40}{52} = \frac{10}{13}
+$$
 
-Thus
+### Two cards drawn with replacement
 
-\[
-C_1=\{\text{all non-face cards}\}
-\]
+#### Event $A_2$
 
-and
+The event "both cards are hearts" is
 
-\[
-P(C_1)=\frac{40}{52}=\frac{10}{13}
-\]
+$$
+A_2 = \{(c_1,c_2) \in \Omega_2 \mid c_1 \text{ and } c_2 \text{ are hearts}\}
+$$
 
----
+There are
 
-# 3. Two Cards Drawn With Replacement
+$$
+13 \cdot 13 = 169
+$$
 
-## Event \(A_2\) — both cards are hearts
+such ordered pairs. Hence,
 
-For each draw, the probability of a heart is:
+$$
+P(A_2) = \frac{169}{2704} = \frac{1}{16}
+$$
 
-\[
-\frac{13}{52}=\frac{1}{4}
-\]
+#### Event $B_2$
 
-So:
+The event "both cards have the same rank":
 
-\[
-P(A_2)=\frac{1}{4}\cdot \frac{1}{4}=\frac{1}{16}
-\]
+- choose the rank in 13 ways,
+- choose a suit for the first card in 4 ways,
+- choose a suit for the second card in 4 ways.
 
-As a subset,
+So the number of ordered pairs is
 
-\[
-A_2=\{(c_1,c_2)\in\Omega_2\mid c_1\text{ and }c_2\text{ are hearts}\}
-\]
+$$
+13 \cdot 4 \cdot 4 = 208
+$$
 
----
+Hence,
 
-## Event \(B_2\) — both cards have the same rank
+$$
+P(B_2) = \frac{208}{2704} = \frac{1}{13}
+$$
 
-The first card can be anything.  
-Once the first card is fixed, there are 4 cards of that rank in the deck, and with replacement the second draw has probability
+#### Event $C_2$
 
-\[
-\frac{4}{52}=\frac{1}{13}
-\]
+The event "at least one ace" is easier by complement.
 
-of matching the same rank.
+The probability that one draw is not an ace is
 
-So:
+$$
+\frac{48}{52} = \frac{12}{13}
+$$
 
-\[
-P(B_2)=\frac{1}{13}
-\]
+So the probability that neither card is an ace is
 
-As a count check:
+$$
+\left(\frac{12}{13}\right)^2 = \frac{144}{169}
+$$
 
-- choose the first card: 52 ways
-- choose the second card with the same rank: 4 ways
+Therefore,
 
-So favorable ordered pairs:
+$$
+P(C_2) = 1 - \frac{144}{169} = \frac{25}{169}
+$$
 
-\[
-52\cdot 4 = 208
-\]
+### Two cards drawn without replacement
 
-Hence:
+#### Event $A_3$
 
-\[
-P(B_2)=\frac{208}{2704}=\frac{1}{13}
-\]
+The event "both cards are hearts":
 
----
+- choose the first heart in 13 ways,
+- choose the second heart in 12 ways.
 
-## Event \(C_2\) — at least one card is an ace
+So the number of ordered pairs is
 
-Use the complement.
+$$
+13 \cdot 12 = 156
+$$
 
-Let \(C_2^c\) be the event that neither card is an ace.
+Hence,
 
-There are 48 non-aces, so:
+$$
+P(A_3) = \frac{156}{2652} = \frac{1}{17}
+$$
 
-\[
-P(C_2^c)=\left(\frac{48}{52}\right)^2=\left(\frac{12}{13}\right)^2=\frac{144}{169}
-\]
+#### Event $B_3$
 
-Therefore:
+The event "both cards have the same rank":
 
-\[
-P(C_2)=1-\frac{144}{169}=\frac{25}{169}
-\]
+- choose the rank in 13 ways,
+- choose the first suit in 4 ways,
+- choose the second different suit in 3 ways.
 
-As a subset,
+So the number of ordered pairs is
 
-\[
-C_2=\{(c_1,c_2)\in\Omega_2\mid \text{at least one of }c_1,c_2\text{ is an ace}\}
-\]
+$$
+13 \cdot 4 \cdot 3 = 156
+$$
 
----
+Hence,
 
-# 4. Two Cards Drawn Without Replacement
+$$
+P(B_3) = \frac{156}{2652} = \frac{1}{17}
+$$
 
-## Event \(A_3\) — both cards are hearts
+#### Event $C_3$
 
-Without replacement:
+The event "one king and one queen in any order":
 
-- first card is a heart: \(\frac{13}{52}\)
-- second card is a heart given the first was a heart: \(\frac{12}{51}\)
+- first order: king then queen gives $4 \cdot 4 = 16$ outcomes,
+- second order: queen then king gives $4 \cdot 4 = 16$ outcomes.
 
-So:
+Total:
 
-\[
-P(A_3)=\frac{13}{52}\cdot\frac{12}{51}
-=\frac{1}{4}\cdot\frac{12}{51}
-=\frac{12}{204}
-=\frac{1}{17}
-\]
+$$
+16 + 16 = 32
+$$
 
-As a subset,
+Hence,
 
-\[
-A_3=\{(c_1,c_2)\in\Omega_2' \mid c_1\text{ and }c_2\text{ are hearts}\}
-\]
+$$
+P(C_3) = \frac{32}{2652} = \frac{8}{663}
+$$
 
----
+### Additional event on $\Omega_2'$
 
-## Event \(B_3\) — both cards have the same rank
+Let $D_3$ be the event "both cards have the same suit".
 
-After drawing the first card, there are only 3 remaining cards of the same rank among the remaining 51 cards.
+- choose the suit in 4 ways,
+- choose the first card in that suit in 13 ways,
+- choose the second different card in that suit in 12 ways.
 
-So:
+So the number of ordered pairs is
 
-\[
-P(B_3)=\frac{3}{51}=\frac{1}{17}
-\]
+$$
+4 \cdot 13 \cdot 12 = 624
+$$
 
-As a count check:
+Hence,
 
-- first card: 52 choices
-- second card of same rank: 3 choices
-
-Favorable outcomes:
-
-\[
-52\cdot 3=156
-\]
-
-Hence:
-
-\[
-P(B_3)=\frac{156}{2652}=\frac{1}{17}
-\]
-
----
-
-## Event \(C_3\) — one card is a king and the other is a queen (in any order)
-
-We count ordered pairs:
-
-- first a king, then a queen: \(4\cdot 4=16\)
-- first a queen, then a king: \(4\cdot 4=16\)
-
-Total favorable outcomes:
-
-\[
-16+16=32
-\]
-
-Thus:
-
-\[
-P(C_3)=\frac{32}{2652}
-\]
-
-Simplify:
-
-\[
-\frac{32}{2652}=\frac{8}{663}
-\]
-
-So:
-
-\[
-P(C_3)=\frac{8}{663}
-\]
-
-As a subset,
-
-\[
-C_3=\{(c_1,c_2)\in\Omega_2' \mid (c_1\text{ is a king and }c_2\text{ is a queen}) \text{ or } (c_1\text{ is a queen and }c_2\text{ is a king})\}
-\]
-
----
-
-# 5. One Additional Event on \(\Omega_2'\)
-
-Define the event
-
-\[
-D_3=\{\text{the two cards have different suits}\}
-\]
-
-We compute its probability.
-
-After the first card is drawn, there are 51 cards left.  
-Among them, 12 have the same suit as the first card, so:
-
-\[
-51-12=39
-\]
-
-have a different suit.
-
-Therefore:
-
-\[
-P(D_3)=\frac{39}{51}=\frac{13}{17}
-\]
-
----
-
-# Final Answers Summary
-
-## Elementary outcome probabilities
-
-- On \(\Omega_1\): each elementary outcome has probability  
-\[
-\frac{1}{52}
-\]
-
-- On \(\Omega_2\): each elementary outcome has probability  
-\[
-\frac{1}{2704}
-\]
-
-- On \(\Omega_2'\): each elementary outcome has probability  
-\[
-\frac{1}{2652}
-\]
-
----
-
-## One card drawn
-
-\[
-P(A_1)=\frac{1}{4}
-\]
-
-\[
-P(B_1)=\frac{1}{13}
-\]
-
-\[
-P(C_1)=\frac{10}{13}
-\]
-
----
-
-## Two cards drawn with replacement
-
-\[
-P(A_2)=\frac{1}{16}
-\]
-
-\[
-P(B_2)=\frac{1}{13}
-\]
-
-\[
-P(C_2)=\frac{25}{169}
-\]
-
----
-
-## Two cards drawn without replacement
-
-\[
-P(A_3)=\frac{1}{17}
-\]
-
-\[
-P(B_3)=\frac{1}{17}
-\]
-
-\[
-P(C_3)=\frac{8}{663}
-\]
-
----
-
-## Additional event
-
-For
-
-\[
-D_3=\{\text{the two cards have different suits}\}
-\]
-
-we get
-
-\[
-P(D_3)=\frac{13}{17}
-\]
+$$
+P(D_3) = \frac{624}{2652} = \frac{4}{17}
+$$

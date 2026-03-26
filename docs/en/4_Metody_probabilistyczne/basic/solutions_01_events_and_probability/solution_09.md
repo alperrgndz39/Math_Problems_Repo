@@ -1,267 +1,144 @@
-# Task 9 — Events and Probabilities in Weekly Weather Observation
+Task 9 - Events and Probabilities in Weekly Weather Observation
 
-We use the sample space from Task 4:
+## Problem
 
-\[
-\Omega_7=\{(x_1,x_2,x_3,x_4,x_5,x_6,x_7)\mid x_i\in\{S,C,R\}\}
-\]
+Refer to **Task 4**, where the sample space $\Omega_7$ describing the weather during seven consecutive days was defined.
 
-where each day is independently:
+Each day can be in exactly one of the following states:
 
-- Sunny \((S)\) with probability \(\frac13\),
-- Cloudy \((C)\) with probability \(\frac13\),
-- Rainy \((R)\) with probability \(\frac13\).
+- Sunny ($S$)
+- Cloudy ($C$)
+- Rainy ($R$)
 
-Thus every elementary outcome in \(\Omega_7\) has probability
+Model the weather as 7 independent days, where each of the three states occurs with probability $\frac{1}{3}$.
 
-\[
-\left(\frac13\right)^7=\frac{1}{2187}
-\]
+Describe the following events as subsets of $\Omega_7$ and compute their probabilities.
 
-since there are 7 independent days.
+## Solution
 
----
+Since each day is independent and each state has probability $\frac{1}{3}$, every specific 7-day sequence has probability
 
-## Event \(A\) — the entire weekend is sunny
+$$
+\left(\frac{1}{3}\right)^7
+$$
 
-Assume:
+### Event $A$
 
-- Saturday = day 6
-- Sunday = day 7
+The event "the entire weekend is sunny" means Saturday and Sunday are both $S$.
 
-Then
+As a subset,
 
-\[
-A=\{(x_1,\dots,x_7)\in\Omega_7 \mid x_6=S,\ x_7=S\}
-\]
+$$
+A = \{(x_1,x_2,x_3,x_4,x_5,x_6,x_7) \in \Omega_7 \mid x_6 = S,\ x_7 = S\}
+$$
 
-The other 5 days may be anything.
+The other 5 days are unrestricted. Therefore,
 
-So:
+$$
+P(A) = \frac{1}{3} \cdot \frac{1}{3} = \frac{1}{9}
+$$
 
-\[
-P(A)=\frac13\cdot\frac13=\frac19
-\]
+### Event $B$
 
-**Answer:**
+The event "Wednesday, Thursday, and Friday are all rainy" means days 3, 4, and 5 are $R$.
 
-\[
-P(A)=\frac19
-\]
+As a subset,
 
----
+$$
+B = \{(x_1,\dots,x_7) \in \Omega_7 \mid x_3 = R,\ x_4 = R,\ x_5 = R\}
+$$
 
-## Event \(B\) — Wednesday, Thursday, and Friday are all rainy
+Therefore,
 
-Assume:
+$$
+P(B) = \left(\frac{1}{3}\right)^3 = \frac{1}{27}
+$$
 
-- Wednesday = day 3
-- Thursday = day 4
-- Friday = day 5
+### Event $C$
 
-Then
+The event "at least one day is sunny" is the complement of "no day is sunny".
 
-\[
-B=\{(x_1,\dots,x_7)\in\Omega_7 \mid x_3=R,\ x_4=R,\ x_5=R\}
-\]
+The probability that one day is not sunny is
 
-The other 4 days may be anything.
+$$
+\frac{2}{3}
+$$
 
-So:
+So the probability that no day is sunny is
 
-\[
-P(B)=\left(\frac13\right)^3=\frac{1}{27}
-\]
+$$
+\left(\frac{2}{3}\right)^7
+$$
 
-**Answer:**
+Therefore,
 
-\[
-P(B)=\frac{1}{27}
-\]
+$$
+P(C) = 1 - \left(\frac{2}{3}\right)^7 = 1 - \frac{128}{2187} = \frac{2059}{2187}
+$$
 
----
+### Event $D$
 
-## Event \(C\) — at least one day during the week is sunny
+The event "no rainy day occurs" means each day is either $S$ or $C$.
 
-This event is
+For one day, that probability is
 
-\[
-C=\{(x_1,\dots,x_7)\in\Omega_7 \mid \text{at least one }x_i=S\}
-\]
+$$
+\frac{2}{3}
+$$
 
-It is easier to use the complement:
+So for all 7 days,
 
-- no day is sunny means every day is either \(C\) or \(R\),
-- so each day has probability \(\frac23\).
+$$
+P(D) = \left(\frac{2}{3}\right)^7 = \frac{128}{2187}
+$$
 
-Thus:
+### Event $E$
 
-\[
-P(C^c)=\left(\frac23\right)^7=\frac{128}{2187}
-\]
+The event "exactly two days are sunny":
 
-Therefore:
+- choose which 2 of the 7 days are sunny in $\binom{7}{2}$ ways,
+- each chosen sunny day has probability $\frac{1}{3}$,
+- each remaining non-sunny day has probability $\frac{2}{3}$.
 
-\[
-P(C)=1-\left(\frac23\right)^7
-\]
+Hence,
 
-\[
-P(C)=1-\frac{128}{2187}=\frac{2059}{2187}
-\]
+$$
+P(E) = \binom{7}{2}\left(\frac{1}{3}\right)^2\left(\frac{2}{3}\right)^5
+$$
 
-**Answer:**
+Since
 
-\[
-P(C)=\frac{2059}{2187}
-\]
-
----
-
-## Event \(D\) — no rainy day occurs during the entire week
-
-This event is
-
-\[
-D=\{(x_1,\dots,x_7)\in\Omega_7 \mid x_i\neq R \text{ for all }i\}
-\]
-
-So each day must be either sunny or cloudy.
-
-For each day:
-
-\[
-P(\text{not rainy})=\frac23
-\]
-
-Hence:
-
-\[
-P(D)=\left(\frac23\right)^7=\frac{128}{2187}
-\]
-
-**Answer:**
-
-\[
-P(D)=\frac{128}{2187}
-\]
-
----
-
-## Event \(E\) — exactly two days during the week are sunny
-
-This event is
-
-\[
-E=\{(x_1,\dots,x_7)\in\Omega_7 \mid \text{exactly two of the }x_i\text{ are }S\}
-\]
-
-To compute its probability:
-
-- choose which 2 of the 7 days are sunny: \(\binom72\),
-- each chosen sunny day has probability \(\frac13\),
-- each of the remaining 5 days is not sunny, so it must be \(C\) or \(R\), with probability \(\frac23\).
-
-Therefore:
-
-\[
-P(E)=\binom72\left(\frac13\right)^2\left(\frac23\right)^5
-\]
-
-Now compute:
-
-\[
-\binom72=21
-\]
-
-\[
-P(E)=21\cdot\frac19\cdot\frac{32}{243}
-\]
-
-\[
-P(E)=\frac{672}{2187}
-\]
-
-This fraction simplifies to
-
-\[
-\frac{224}{729}
-\]
-
-**Answer:**
-
-\[
-P(E)=\frac{224}{729}
-\]
-
----
-
-## Additional event
-
-Define the event
-
-\[
-F=\{\text{all 7 days have the same weather}\}
-\]
-
-As a subset of \(\Omega_7\),
-
-\[
-F=\{(S,S,S,S,S,S,S),\ (C,C,C,C,C,C,C),\ (R,R,R,R,R,R,R)\}
-\]
-
-There are exactly 3 favorable outcomes.
-
-Each has probability
-
-\[
-\left(\frac13\right)^7=\frac{1}{2187}
-\]
-
-So:
-
-\[
-P(F)=3\cdot\frac{1}{2187}=\frac{1}{729}
-\]
-
-**Answer:**
-
-\[
-P(F)=\frac{1}{729}
-\]
-
----
-
-# Final Answers Summary
-
-\[
-P(A)=\frac19
-\]
-
-\[
-P(B)=\frac{1}{27}
-\]
-
-\[
-P(C)=\frac{2059}{2187}
-\]
-
-\[
-P(D)=\frac{128}{2187}
-\]
-
-\[
-P(E)=\frac{224}{729}
-\]
-
-For the additional event
-
-\[
-F=\{\text{all 7 days have the same weather}\}
-\]
+$$
+\binom{7}{2} = 21
+$$
 
 we get
 
-\[
-P(F)=\frac{1}{729}
-\]
+$$
+P(E) = 21 \cdot \frac{1}{9} \cdot \frac{32}{243} = \frac{672}{2187}
+$$
+
+### Additional event on $\Omega_7$
+
+Let $F$ be the event "all 7 days are different from the previous day", meaning no two consecutive days are equal.
+
+- the first day can be chosen in 3 ways,
+- each next day has 2 choices, because it must differ from the previous day.
+
+So the number of valid sequences is
+
+$$
+3 \cdot 2^6
+$$
+
+Out of all
+
+$$
+3^7
+$$
+
+possible sequences, the probability is
+
+$$
+P(F) = \frac{3 \cdot 2^6}{3^7} = \frac{2^6}{3^6} = \frac{64}{729}
+$$

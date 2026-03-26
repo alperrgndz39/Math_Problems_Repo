@@ -1,385 +1,221 @@
-# Task 7 — Events and Probabilities in Die Rolling
+Task 7 - Events and Probabilities in Die Rolling
 
-We refer to the sample spaces from Task 2.
+## Problem
 
-Since the die is **fair**, all elementary outcomes are **equally likely**.
+Refer to **Task 2**, where the sample spaces for one, two, and three rolls of a fair six-sided die were defined.
 
----
+Assume the die is fair, so all elementary outcomes are equally likely.
 
-## 1. Probabilities of Elementary Outcomes
+First assign probabilities to all elementary outcomes in the sample spaces $\Omega_1$, $\Omega_2$, and $\Omega_3$.
 
-### Sample space \(\Omega_1\) — one roll
+Then describe the events as subsets of the sample space and compute their probabilities.
 
-\[
-\Omega_1=\{1,2,3,4,5,6\}
-\]
+## Solution
 
-There are:
+### Elementary outcome probabilities
 
-\[
-|\Omega_1|=6
-\]
+For one roll, each elementary outcome in $\Omega_1$ has probability
 
-elementary outcomes, so for every \(\omega \in \Omega_1\),
-
-\[
-P(\{\omega\})=\frac{1}{6}
-\]
-
----
-
-### Sample space \(\Omega_2\) — two rolls
-
-\[
-\Omega_2=\{(i,j)\mid i,j\in\{1,2,3,4,5,6\}\}
-\]
-
-There are:
-
-\[
-|\Omega_2|=6^2=36
-\]
-
-elementary outcomes, so for every \((i,j)\in\Omega_2\),
-
-\[
-P(\{(i,j)\})=\frac{1}{36}
-\]
-
----
-
-### Sample space \(\Omega_3\) — three rolls
-
-\[
-\Omega_3=\{(i,j,k)\mid i,j,k\in\{1,2,3,4,5,6\}\}
-\]
-
-There are:
-
-\[
-|\Omega_3|=6^3=216
-\]
-
-elementary outcomes, so for every \((i,j,k)\in\Omega_3\),
-
-\[
-P(\{(i,j,k)\})=\frac{1}{216}
-\]
-
----
-
-# 2. One Die Roll
-
-## Event \(A_1\) — the result is even
-
-\[
-A_1=\{2,4,6\}
-\]
-
-So:
-
-\[
-P(A_1)=\frac{3}{6}=\frac{1}{2}
-\]
-
----
-
-## Event \(B_1\) — the result is greater than 4
-
-\[
-B_1=\{5,6\}
-\]
-
-So:
-
-\[
-P(B_1)=\frac{2}{6}=\frac{1}{3}
-\]
-
----
-
-## Event \(C_1\) — the result is at most 3
-
-\[
-C_1=\{1,2,3\}
-\]
-
-So:
-
-\[
-P(C_1)=\frac{3}{6}=\frac{1}{2}
-\]
-
----
-
-# 3. Two Die Rolls
-
-## Event \(A_2\) — the sum of the results equals 7
-
-\[
-A_2=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}
-\]
-
-There are 6 such outcomes, so:
-
-\[
-P(A_2)=\frac{6}{36}=\frac{1}{6}
-\]
-
----
-
-## Event \(B_2\) — both results are the same
-
-\[
-B_2=\{(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)\}
-\]
-
-There are 6 such outcomes, so:
-
-\[
-P(B_2)=\frac{6}{36}=\frac{1}{6}
-\]
-
----
-
-## Event \(C_2\) — the sum of the results is at least 10
-
-Possible sums are 10, 11, and 12.
-
-### Sum = 10
-
-\[
-(4,6),(5,5),(6,4)
-\]
-
-### Sum = 11
-
-\[
-(5,6),(6,5)
-\]
-
-### Sum = 12
-
-\[
-(6,6)
-\]
-
-So:
-
-\[
-C_2=\{(4,6),(5,5),(6,4),(5,6),(6,5),(6,6)\}
-\]
-
-There are 6 outcomes, so:
-
-\[
-P(C_2)=\frac{6}{36}=\frac{1}{6}
-\]
-
----
-
-# 4. Three Die Rolls
-
-## Event \(A_3\) — the sum of the results equals 10
-
-We count all ordered triples \((i,j,k)\) with
-
-\[
-i+j+k=10
-\]
-
-where \(1\le i,j,k\le 6\).
-
-The possible unordered patterns are:
-
-- \(1,3,6\)
-- \(1,4,5\)
-- \(2,2,6\)
-- \(2,3,5\)
-- \(2,4,4\)
-- \(3,3,4\)
-
-Now count permutations of each:
-
-- \(1,3,6\): \(3!=6\)
-- \(1,4,5\): \(3!=6\)
-- \(2,2,6\): \(\frac{3!}{2!}=3\)
-- \(2,3,5\): \(3!=6\)
-- \(2,4,4\): \(\frac{3!}{2!}=3\)
-- \(3,3,4\): \(\frac{3!}{2!}=3\)
-
-Total:
-
-\[
-6+6+3+6+3+3=27
-\]
-
-Therefore:
-
-\[
-P(A_3)=\frac{27}{216}=\frac{1}{8}
-\]
-
----
-
-## Event \(B_3\) — exactly two rolls give the same number
-
-This means the pattern is:
-
-- one value appears exactly twice,
-- another different value appears once.
-
-### Counting method
-
-- choose the repeated value: \(6\) ways
-- choose the different value: \(5\) ways
-- choose the position of the different value: \(3\) ways
-
-So the number of outcomes is:
-
-\[
-6\cdot 5\cdot 3=90
-\]
-
-Thus:
-
-\[
-P(B_3)=\frac{90}{216}=\frac{5}{12}
-\]
-
----
-
-## Event \(C_3\) — the outcomes contain two twos and one three (in any order)
-
-The possible ordered triples are:
-
-\[
-C_3=\{(2,2,3),(2,3,2),(3,2,2)\}
-\]
-
-There are 3 outcomes, so:
-
-\[
-P(C_3)=\frac{3}{216}=\frac{1}{72}
-\]
-
----
-
-# 5. One Additional Event on \(\Omega_3\)
-
-Define:
-
-\[
-D_3 = \{\text{at least one roll is a 6}\}
-\]
-
-We compute its probability using the complement.
-
-The complementary event is:
-
-\[
-D_3^c=\{\text{no roll is a 6}\}
-\]
-
-For each roll, the probability of not getting a 6 is:
-
-\[
-\frac{5}{6}
-\]
-
-So:
-
-\[
-P(D_3^c)=\left(\frac{5}{6}\right)^3=\frac{125}{216}
-\]
-
-Hence:
-
-\[
-P(D_3)=1-\frac{125}{216}=\frac{91}{216}
-\]
-
----
-
-# Final Answers Summary
-
-## Elementary outcome probabilities
-
-- On \(\Omega_1\): each elementary outcome has probability  
-\[
+$$
 \frac{1}{6}
-\]
+$$
 
-- On \(\Omega_2\): each elementary outcome has probability  
-\[
+For two rolls, each elementary outcome in $\Omega_2$ has probability
+
+$$
 \frac{1}{36}
-\]
+$$
 
-- On \(\Omega_3\): each elementary outcome has probability  
-\[
+For three rolls, each elementary outcome in $\Omega_3$ has probability
+
+$$
 \frac{1}{216}
-\]
+$$
+
+### One die roll
+
+#### Event $A_1$
+
+The event "even result" is
+
+$$
+A_1 = \{2,4,6\}
+$$
+
+Therefore,
+
+$$
+P(A_1) = \frac{3}{6} = \frac{1}{2}
+$$
+
+#### Event $B_1$
+
+The event "greater than 4" is
+
+$$
+B_1 = \{5,6\}
+$$
+
+Therefore,
+
+$$
+P(B_1) = \frac{2}{6} = \frac{1}{3}
+$$
+
+#### Event $C_1$
+
+The event "at most 3" is
+
+$$
+C_1 = \{1,2,3\}
+$$
+
+Therefore,
+
+$$
+P(C_1) = \frac{3}{6} = \frac{1}{2}
+$$
+
+### Two die rolls
+
+#### Event $A_2$
+
+The event "sum equals 7" is
+
+$$
+A_2 = \{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}
+$$
+
+Therefore,
+
+$$
+P(A_2) = \frac{6}{36} = \frac{1}{6}
+$$
+
+#### Event $B_2$
+
+The event "both results are the same" is
+
+$$
+B_2 = \{(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)\}
+$$
+
+Therefore,
+
+$$
+P(B_2) = \frac{6}{36} = \frac{1}{6}
+$$
+
+#### Event $C_2$
+
+The event "sum is at least 10" includes sums 10, 11, and 12:
+
+$$
+C_2 = \{(4,6),(5,5),(6,4),(5,6),(6,5),(6,6)\}
+$$
+
+Therefore,
+
+$$
+P(C_2) = \frac{6}{36} = \frac{1}{6}
+$$
+
+### Three die rolls
+
+#### Event $A_3$
+
+We count ordered triples $(i,j,k)$ such that
+
+$$
+i+j+k = 10
+$$
+
+The positive integer solutions with each variable at most 6 give the following ordered outcomes:
+
+$$
+(1,3,6),(1,4,5),(1,5,4),(1,6,3),
+$$
+
+$$
+(2,2,6),(2,3,5),(2,4,4),(2,5,3),(2,6,2),
+$$
+
+$$
+(3,1,6),(3,2,5),(3,3,4),(3,4,3),(3,5,2),(3,6,1),
+$$
+
+$$
+(4,1,5),(4,2,4),(4,3,3),(4,4,2),(4,5,1),
+$$
+
+$$
+(5,1,4),(5,2,3),(5,3,2),(5,4,1),
+$$
+
+$$
+(6,1,3),(6,2,2),(6,3,1)
+$$
+
+There are 27 such outcomes, so
+
+$$
+P(A_3) = \frac{27}{216} = \frac{1}{8}
+$$
+
+#### Event $B_3$
+
+The event "exactly two rolls give the same number" means one pair and one different number.
+
+Choose:
+
+- the repeated value in 6 ways,
+- the different value in 5 ways,
+- the position of the different value in 3 ways.
+
+So the number of outcomes is
+
+$$
+6 \cdot 5 \cdot 3 = 90
+$$
+
+Hence,
+
+$$
+P(B_3) = \frac{90}{216} = \frac{5}{12}
+$$
+
+#### Event $C_3$
+
+The event "two twos and one three" is
+
+$$
+C_3 = \{(2,2,3),(2,3,2),(3,2,2)\}
+$$
+
+Therefore,
+
+$$
+P(C_3) = \frac{3}{216} = \frac{1}{72}
+$$
+
+### Additional event on $\Omega_3$
+
+Let
+
+$$
+D_3 = \{(i,j,k) \in \Omega_3 \mid i,j,k \text{ are all even}\}
+$$
+
+Each roll must be one of $\{2,4,6\}$, so there are
+
+$$
+3^3 = 27
+$$
+
+such outcomes. Therefore,
+
+$$
+P(D_3) = \frac{27}{216} = \frac{1}{8}
+$$
 
 ---
-
-## One roll
-
-\[
-P(A_1)=\frac{1}{2}
-\]
-
-\[
-P(B_1)=\frac{1}{3}
-\]
-
-\[
-P(C_1)=\frac{1}{2}
-\]
-
----
-
-## Two rolls
-
-\[
-P(A_2)=\frac{1}{6}
-\]
-
-\[
-P(B_2)=\frac{1}{6}
-\]
-
-\[
-P(C_2)=\frac{1}{6}
-\]
-
----
-
-## Three rolls
-
-\[
-P(A_3)=\frac{1}{8}
-\]
-
-\[
-P(B_3)=\frac{5}{12}
-\]
-
-\[
-P(C_3)=\frac{1}{72}
-\]
-
----
-
-## Additional event
-
-For
-
-\[
-D_3=\{\text{at least one roll is a 6}\}
-\]
-
-we get
-
-\[
-P(D_3)=\frac{91}{216}
-\]

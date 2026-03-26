@@ -1,306 +1,144 @@
-# Task 10 — Events and Probabilities in Buffon's Needle Experiment
+Task 10 - Events and Probabilities in Buffon's Needle Experiment
 
-We use the sample space from Task 5:
+## Problem
 
-\[
-\Omega
+Refer to **Task 5**, where the sample space $\Omega$ of Buffon's needle experiment was defined.
+
+A needle of length $L$ is thrown randomly onto a plane with equally spaced parallel lines. The distance between neighboring lines is $d$.
+
+Assume $L \le d$. Let $X \in \left[0,\frac{d}{2}\right]$ be the distance from the needle's center to the nearest line and $\theta \in \left[0,\frac{\pi}{2}\right]$ the angle between the needle and the lines. Assume $X$ and $\theta$ are independent and uniformly distributed on these intervals.
+
+Describe the following events and compute their probabilities.
+
+## Solution
+
+The sample space is
+
+$$
+\Omega = \left[0,\frac{d}{2}\right] \times \left[0,\frac{\pi}{2}\right]
+$$
+
+Since $X$ and $\theta$ are independent and uniform, probability is proportional to area in this rectangle.
+
+The needle intersects a line exactly when the vertical reach of half the needle is at least the distance to the nearest line:
+
+$$
+X \le \frac{L}{2}\sin\theta
+$$
+
+### Event $A$
+
+The event "the needle intersects one of the lines" is
+
+$$
+A = \left\{(x,\theta) \in \Omega \mid x \le \frac{L}{2}\sin\theta \right\}
+$$
+
+Its probability is
+
+$$
+P(A) = \frac{1}{\frac{d}{2}\cdot\frac{\pi}{2}} \int_0^{\frac{\pi}{2}} \frac{L}{2}\sin\theta \, d\theta
+$$
+
+Since
+
+$$
+\int_0^{\frac{\pi}{2}} \sin\theta \, d\theta = 1
+$$
+
+we obtain
+
+$$
+P(A) = \frac{1}{\frac{\pi d}{4}} \cdot \frac{L}{2} = \frac{2L}{\pi d}
+$$
+
+### Event $B$
+
+The event "the needle does not intersect any line" is the complement of $A$:
+
+$$
+B = \Omega \setminus A
+$$
+
+Hence,
+
+$$
+P(B) = 1 - P(A) = 1 - \frac{2L}{\pi d}
+$$
+
+### Event $C$
+
+The event "the angle is smaller than $\frac{\pi}{6}$" is
+
+$$
+C = \left\{(x,\theta) \in \Omega \mid 0 \le \theta < \frac{\pi}{6}\right\}
+$$
+
+Since $\theta$ is uniform on $\left[0,\frac{\pi}{2}\right]$,
+
+$$
+P(C) = \frac{\frac{\pi}{6}}{\frac{\pi}{2}} = \frac{1}{3}
+$$
+
+### Event $D$
+
+The event "the center falls at a distance less than $\frac{d}{4}$ from the nearest line" is
+
+$$
+D = \left\{(x,\theta) \in \Omega \mid 0 \le x < \frac{d}{4}\right\}
+$$
+
+Since $X$ is uniform on $\left[0,\frac{d}{2}\right]$,
+
+$$
+P(D) = \frac{\frac{d}{4}}{\frac{d}{2}} = \frac{1}{2}
+$$
+
+### Event $E$
+
+The event "the needle intersects a line and the angle is greater than $\frac{\pi}{4}$" is
+
+$$
+E = \left\{(x,\theta) \in \Omega \mid \theta > \frac{\pi}{4},\ x \le \frac{L}{2}\sin\theta \right\}
+$$
+
+Its probability is
+
+$$
+P(E) = \frac{1}{\frac{\pi d}{4}} \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \frac{L}{2}\sin\theta \, d\theta
+$$
+
+Now,
+
+$$
+\int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \sin\theta \, d\theta
 =
-\left\{
-(x,\theta)
-\;\middle|\;
-x\in\left[0,\frac d2\right],\;
-\theta\in\left[0,\frac{\pi}{2}\right]
-\right\}
-\]
-
-where:
-
-- \(x\) is the distance from the center of the needle to the nearest line,
-- \(\theta\) is the angle between the needle and the lines.
-
-We assume:
-
-- \(L \le d\),
-- \(X\sim \mathrm{Unif}\left[0,\frac d2\right]\),
-- \(\Theta\sim \mathrm{Unif}\left[0,\frac{\pi}{2}\right]\),
-- \(X\) and \(\Theta\) are independent.
-
-Hence the probability of an event is proportional to its area in the rectangle
-
-\[
-\left[0,\frac d2\right]\times\left[0,\frac{\pi}{2}\right].
-\]
-
-The total area of the sample space is
-
-\[
-\frac d2\cdot \frac{\pi}{2}=\frac{d\pi}{4}.
-\]
-
----
-
-## 1. Event \(A\) — the needle intersects one of the lines
-
-The needle intersects a line exactly when the perpendicular projection of half the needle reaches the nearest line.
-
-Since the angle is measured **with the lines**, the perpendicular component of half the needle is
-
-\[
-\frac L2 \sin\theta.
-\]
-
-So the intersection condition is:
-
-\[
-x \le \frac L2 \sin\theta.
-\]
-
-Thus
-
-\[
-A=\left\{(x,\theta)\in\Omega \;\middle|\; x\le \frac L2\sin\theta \right\}.
-\]
-
-### Probability of \(A\)
-
-For fixed \(\theta\), the allowed values of \(x\) go from \(0\) to \(\frac L2\sin\theta\). Therefore:
-
-\[
-P(A)
+\left[-\cos\theta\right]_{\frac{\pi}{4}}^{\frac{\pi}{2}}
 =
-\frac{1}{\frac{d\pi}{4}}
-\int_0^{\pi/2}\int_0^{(L/2)\sin\theta} dx\, d\theta.
-\]
-
-Compute the inner integral:
-
-\[
-P(A)
+0 - \left(-\frac{\sqrt{2}}{2}\right)
 =
-\frac{1}{\frac{d\pi}{4}}
-\int_0^{\pi/2}\frac L2\sin\theta\, d\theta.
-\]
+\frac{\sqrt{2}}{2}
+$$
 
-\[
-\int_0^{\pi/2}\sin\theta\, d\theta = 1.
-\]
+Therefore,
 
-So:
+$$
+P(E) = \frac{1}{\frac{\pi d}{4}} \cdot \frac{L}{2} \cdot \frac{\sqrt{2}}{2}
+= \frac{\sqrt{2}L}{\pi d}
+$$
 
-\[
-P(A)
-=
-\frac{1}{\frac{d\pi}{4}}\cdot \frac L2
-=
-\frac{2L}{d\pi}.
-\]
+### Additional event
 
-**Answer:**
+Let $F$ be the event "the angle is greater than $\frac{\pi}{3}$":
 
-\[
-P(A)=\frac{2L}{d\pi}
-\]
+$$
+F = \left\{(x,\theta) \in \Omega \mid \theta > \frac{\pi}{3}\right\}
+$$
 
----
+Since $\theta$ is uniform,
 
-## 2. Event \(B\) — the needle does not intersect any line
-
-This is the complement of \(A\):
-
-\[
-B=A^c
-=
-\left\{(x,\theta)\in\Omega \;\middle|\; x> \frac L2\sin\theta \right\}.
-\]
-
-Therefore:
-
-\[
-P(B)=1-P(A)=1-\frac{2L}{d\pi}.
-\]
-
-**Answer:**
-
-\[
-P(B)=1-\frac{2L}{d\pi}
-\]
-
----
-
-## 3. Event \(C\) — the angle between the needle and the lines is smaller than \(\pi/6\)
-
-This event depends only on \(\theta\):
-
-\[
-C=\left\{(x,\theta)\in\Omega \;\middle|\; 0\le \theta<\frac{\pi}{6}\right\}.
-\]
-
-Since \(\Theta\) is uniform on \(\left[0,\frac{\pi}{2}\right]\),
-
-\[
-P(C)=\frac{\pi/6}{\pi/2}=\frac13.
-\]
-
-**Answer:**
-
-\[
-P(C)=\frac13
-\]
-
----
-
-## 4. Event \(D\) — the center of the needle falls at a distance less than \(d/4\) from the nearest line
-
-This event depends only on \(x\):
-
-\[
-D=\left\{(x,\theta)\in\Omega \;\middle|\; 0\le x<\frac d4\right\}.
-\]
-
-Since \(X\) is uniform on \(\left[0,\frac d2\right]\),
-
-\[
-P(D)=\frac{d/4}{d/2}=\frac12.
-\]
-
-**Answer:**
-
-\[
-P(D)=\frac12
-\]
-
----
-
-## 5. Event \(E\) — the needle intersects a line and the angle with the lines is greater than \(\pi/4\)
-
-This means both conditions hold:
-
-- intersection: \(\displaystyle x\le \frac L2\sin\theta\),
-- angle restriction: \(\displaystyle \theta>\frac{\pi}{4}\).
-
-So:
-
-\[
-E
-=
-\left\{
-(x,\theta)\in\Omega
-\;\middle|\;
-\theta>\frac{\pi}{4},\;
-x\le \frac L2\sin\theta
-\right\}.
-\]
-
-### Probability of \(E\)
-
-\[
-P(E)
-=
-\frac{1}{\frac{d\pi}{4}}
-\int_{\pi/4}^{\pi/2}\int_0^{(L/2)\sin\theta} dx\, d\theta.
-\]
-
-Compute the inner integral:
-
-\[
-P(E)
-=
-\frac{1}{\frac{d\pi}{4}}
-\int_{\pi/4}^{\pi/2}\frac L2\sin\theta\, d\theta.
-\]
-
-Now:
-
-\[
-\int_{\pi/4}^{\pi/2}\sin\theta\, d\theta
-=
-\left[-\cos\theta\right]_{\pi/4}^{\pi/2}
-=
-0-\left(-\frac{\sqrt2}{2}\right)
-=
-\frac{\sqrt2}{2}.
-\]
-
-Hence:
-
-\[
-P(E)
-=
-\frac{1}{\frac{d\pi}{4}}
-\cdot
-\frac L2 \cdot \frac{\sqrt2}{2}
-=
-\frac{L\sqrt2}{d\pi}.
-\]
-
-**Answer:**
-
-\[
-P(E)=\frac{L\sqrt2}{d\pi}
-\]
-
----
-
-## 6. One additional event
-
-Define:
-
-\[
-F=\left\{(x,\theta)\in\Omega \;\middle|\; \theta\le \frac{\pi}{3}\right\}.
-\]
-
-This is the event that the angle between the needle and the lines is at most \(\pi/3\).
-
-Since \(\Theta\) is uniform on \(\left[0,\frac{\pi}{2}\right]\),
-
-\[
-P(F)=\frac{\pi/3}{\pi/2}=\frac{2}{3}.
-\]
-
-**Answer:**
-
-\[
-P(F)=\frac23
-\]
-
----
-
-# Final Answers Summary
-
-\[
-A=\left\{(x,\theta)\mid x\le \frac L2\sin\theta\right\},
-\qquad
-P(A)=\frac{2L}{d\pi}
-\]
-
-\[
-B=\left\{(x,\theta)\mid x> \frac L2\sin\theta\right\},
-\qquad
-P(B)=1-\frac{2L}{d\pi}
-\]
-
-\[
-C=\left\{(x,\theta)\mid \theta<\frac{\pi}{6}\right\},
-\qquad
-P(C)=\frac13
-\]
-
-\[
-D=\left\{(x,\theta)\mid x<\frac d4\right\},
-\qquad
-P(D)=\frac12
-\]
-
-\[
-E=\left\{(x,\theta)\mid \theta>\frac{\pi}{4},\ x\le \frac L2\sin\theta\right\},
-\qquad
-P(E)=\frac{L\sqrt2}{d\pi}
-\]
-
-One possible additional event is
-
-\[
-F=\left\{(x,\theta)\mid \theta\le \frac{\pi}{3}\right\},
-\qquad
-P(F)=\frac23
-\]
+$$
+P(F) = \frac{\frac{\pi}{2} - \frac{\pi}{3}}{\frac{\pi}{2}}
+= \frac{\frac{\pi}{6}}{\frac{\pi}{2}}
+= \frac{1}{3}
+$$
