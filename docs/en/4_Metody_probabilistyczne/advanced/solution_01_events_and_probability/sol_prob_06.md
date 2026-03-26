@@ -1,253 +1,280 @@
-# Task 6 — Events and Probabilities in Coin Tossing
+# Task 6 – Events and Probabilities in Coin Tossing
+
+## Problem Statement
 
 Refer to Task 1, where the sample spaces for one, two, and three coin tosses were defined.
 
-We assume that the coin is **fair**, so all elementary outcomes are equally likely.
+Assume the coin is fair, so all elementary outcomes are equally likely.
 
-Let:
+First assign probabilities to all elementary outcomes in the sample spaces:
 
-- **H** = Heads
-- **T** = Tails
+- $\Omega_1$ for one toss,
+- $\Omega_2$ for two tosses,
+- $\Omega_3$ for three tosses.
 
----
+Then describe the following events as subsets of the sample space and compute their probabilities.
 
-## 1. Probabilities of elementary outcomes
+For one coin toss:
 
-### Sample space for one toss: Ω₁
+- $A_1$ – the result is heads,
+- $B_1$ – the result is tails,
+- $C_1$ – the result is not tails.
 
-\[
+For two coin tosses:
+
+- $A_2$ – exactly one head occurs,
+- $B_2$ – at least one head occurs,
+- $C_2$ – both tosses give the same result.
+
+For three coin tosses:
+
+- $A_3$ – exactly two heads occur,
+- $B_3$ – at least one tail occurs,
+- $C_3$ – all three tosses give the same result.
+
+Finally, define one additional event on $\Omega_3$ and compute its probability.
+
+## Theory
+
+For a fair coin, each elementary outcome has the same probability.
+
+If a sample space $\Omega$ contains $n$ equally likely elementary outcomes, then each elementary outcome has probability
+
+$$
+\frac{1}{n}
+$$
+
+If an event $A$ is a subset of the sample space, then its probability is
+
+$$
+P(A) = \frac{|A|}{|\Omega|}
+$$
+
+where $|A|$ is the number of favorable outcomes and $|\Omega|$ is the total number of outcomes.
+
+We use the notation:
+
+- $H$ = heads,
+- $T$ = tails.
+
+## Step-by-Step Solution
+
+### 1. Probabilities of elementary outcomes
+
+For one toss, the sample space is
+
+$$
 \Omega_1 = \{H, T\}
-\]
+$$
 
-Since the coin is fair, both outcomes are equally likely:
+There are $2$ elementary outcomes, so each has probability
 
-\[
-P(H)=\frac{1}{2}, \qquad P(T)=\frac{1}{2}
-\]
+$$
+P(H) = \frac{1}{2}, \qquad P(T) = \frac{1}{2}
+$$
 
-So each elementary outcome in \(\Omega_1\) has probability:
+For two tosses, the sample space is
 
-\[
-\frac{1}{2}
-\]
-
----
-
-### Sample space for two tosses: Ω₂
-
-\[
+$$
 \Omega_2 = \{HH, HT, TH, TT\}
-\]
+$$
 
-There are 4 elementary outcomes, and all are equally likely. Therefore:
+There are $4$ elementary outcomes, so each has probability
 
-\[
-P(HH)=P(HT)=P(TH)=P(TT)=\frac{1}{4}
-\]
+$$
+P(HH) = P(HT) = P(TH) = P(TT) = \frac{1}{4}
+$$
 
-So each elementary outcome in \(\Omega_2\) has probability:
+For three tosses, the sample space is
 
-\[
-\frac{1}{4}
-\]
-
----
-
-### Sample space for three tosses: Ω₃
-
-\[
+$$
 \Omega_3 = \{HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\}
-\]
+$$
 
-There are 8 elementary outcomes, and all are equally likely. Therefore:
+There are $8$ elementary outcomes, so each has probability
 
-\[
-P(HHH)=P(HHT)=P(HTH)=P(HTT)=P(THH)=P(THT)=P(TTH)=P(TTT)=\frac{1}{8}
-\]
+$$
+P(HHH) = P(HHT) = P(HTH) = P(HTT) = P(THH) = P(THT) = P(TTH) = P(TTT) = \frac{1}{8}
+$$
 
-So each elementary outcome in \(\Omega_3\) has probability:
+### 2. One coin toss
 
-\[
-\frac{1}{8}
-\]
+#### Event $A_1$ – the result is heads
 
----
+The event is
 
-## 2. Rule for the probability of an event
+$$
+A_1 = \{H\}
+$$
 
-An event is any subset of the sample space.
+It contains $1$ favorable outcome out of $2$, so
 
-Because all elementary outcomes are equally likely, the probability of an event \(A\) is:
+$$
+P(A_1) = \frac{1}{2}
+$$
 
-\[
-P(A)=\frac{|A|}{|\Omega|}
-\]
+#### Event $B_1$ – the result is tails
 
-where:
+The event is
 
-- \(|A|\) = number of favorable outcomes
-- \(|\Omega|\) = total number of outcomes in the sample space
+$$
+B_1 = \{T\}
+$$
 
----
+It contains $1$ favorable outcome out of $2$, so
 
-## 3. Events and their probabilities
+$$
+P(B_1) = \frac{1}{2}
+$$
 
-## One Coin Toss
+#### Event $C_1$ – the result is not tails
 
-### Event \(A_1\) — the result is heads
+Not tails means heads, so
 
-\[
-A_1=\{H\}
-\]
+$$
+C_1 = \{H\}
+$$
 
-\[
-P(A_1)=\frac{1}{2}
-\]
+Thus
 
-### Event \(B_1\) — the result is tails
+$$
+P(C_1) = \frac{1}{2}
+$$
 
-\[
-B_1=\{T\}
-\]
+### 3. Two coin tosses
 
-\[
-P(B_1)=\frac{1}{2}
-\]
+#### Event $A_2$ – exactly one head occurs
 
-### Event \(C_1\) — the result is not tails
+Exactly one head occurs in the outcomes $HT$ and $TH$, so
 
-Not tails means heads, so:
+$$
+A_2 = \{HT, TH\}
+$$
 
-\[
-C_1=\{H\}
-\]
+This event has $2$ favorable outcomes out of $4$, hence
 
-\[
-P(C_1)=\frac{1}{2}
-\]
+$$
+P(A_2) = \frac{2}{4} = \frac{1}{2}
+$$
 
----
+#### Event $B_2$ – at least one head occurs
 
-## Two Coin Tosses
+At least one head occurs in all outcomes except $TT$, so
 
-### Event \(A_2\) — exactly one head occurs
+$$
+B_2 = \{HH, HT, TH\}
+$$
 
-\[
-A_2=\{HT, TH\}
-\]
+This event has $3$ favorable outcomes out of $4$, hence
 
-\[
-P(A_2)=\frac{2}{4}=\frac{1}{2}
-\]
+$$
+P(B_2) = \frac{3}{4}
+$$
 
-### Event \(B_2\) — at least one head occurs
+#### Event $C_2$ – both tosses give the same result
 
-\[
-B_2=\{HH, HT, TH\}
-\]
+The two tosses are the same in the outcomes $HH$ and $TT$, so
 
-\[
-P(B_2)=\frac{3}{4}
-\]
+$$
+C_2 = \{HH, TT\}
+$$
 
-### Event \(C_2\) — both tosses give the same result
+This event has $2$ favorable outcomes out of $4$, hence
 
-\[
-C_2=\{HH, TT\}
-\]
+$$
+P(C_2) = \frac{2}{4} = \frac{1}{2}
+$$
 
-\[
-P(C_2)=\frac{2}{4}=\frac{1}{2}
-\]
+### 4. Three coin tosses
 
----
+#### Event $A_3$ – exactly two heads occur
 
-## Three Coin Tosses
+Exactly two heads occur in the outcomes $HHT$, $HTH$, and $THH$, so
 
-### Event \(A_3\) — exactly two heads occur
+$$
+A_3 = \{HHT, HTH, THH\}
+$$
 
-\[
-A_3=\{HHT, HTH, THH\}
-\]
+This event has $3$ favorable outcomes out of $8$, hence
 
-\[
-P(A_3)=\frac{3}{8}
-\]
+$$
+P(A_3) = \frac{3}{8}
+$$
 
-### Event \(B_3\) — at least one tail occurs
+#### Event $B_3$ – at least one tail occurs
 
-This means all outcomes except \(HHH\):
+At least one tail occurs in every outcome except $HHH$, so
 
-\[
-B_3=\{HHT, HTH, HTT, THH, THT, TTH, TTT\}
-\]
+$$
+B_3 = \{HHT, HTH, HTT, THH, THT, TTH, TTT\}
+$$
 
-\[
-P(B_3)=\frac{7}{8}
-\]
+This event has $7$ favorable outcomes out of $8$, hence
 
-### Event \(C_3\) — all three tosses give the same result
+$$
+P(B_3) = \frac{7}{8}
+$$
 
-\[
-C_3=\{HHH, TTT\}
-\]
+#### Event $C_3$ – all three tosses give the same result
 
-\[
-P(C_3)=\frac{2}{8}=\frac{1}{4}
-\]
+All three tosses are the same only in the outcomes $HHH$ and $TTT$, so
 
----
+$$
+C_3 = \{HHH, TTT\}
+$$
 
-## 4. One additional event on \(\Omega_3\)
+This event has $2$ favorable outcomes out of $8$, hence
 
-Define the event \(D_3\) as:
+$$
+P(C_3) = \frac{2}{8} = \frac{1}{4}
+$$
 
-### Event \(D_3\) — exactly one head occurs
+### 5. One additional event on $\Omega_3$
 
-\[
-D_3=\{HTT, THT, TTH\}
-\]
+Define an additional event $D_3$ as: exactly one head occurs.
 
-\[
-P(D_3)=\frac{3}{8}
-\]
+Then
 
----
+$$
+D_3 = \{HTT, THT, TTH\}
+$$
 
-## 5. Conclusion
+This event has $3$ favorable outcomes out of $8$, so
 
-For a fair coin:
+$$
+P(D_3) = \frac{3}{8}
+$$
 
-- In \(\Omega_1\), each elementary outcome has probability \(\frac{1}{2}\)
-- In \(\Omega_2\), each elementary outcome has probability \(\frac{1}{4}\)
-- In \(\Omega_3\), each elementary outcome has probability \(\frac{1}{8}\)
+## Final Result
 
-An event is a subset of the sample space, and its probability is found by dividing the number of outcomes in the event by the total number of outcomes in the sample space.
+The probabilities of all elementary outcomes are:
 
----
+- in $\Omega_1$, each elementary outcome has probability $\frac{1}{2}$,
+- in $\Omega_2$, each elementary outcome has probability $\frac{1}{4}$,
+- in $\Omega_3$, each elementary outcome has probability $\frac{1}{8}$.
 
-## 6. Short presentation explanation
+The required event probabilities are:
 
-You can explain it like this in class:
+- $P(A_1) = \frac{1}{2}$,
+- $P(B_1) = \frac{1}{2}$,
+- $P(C_1) = \frac{1}{2}$,
 
-A fair coin means that Heads and Tails have equal probability.
+- $P(A_2) = \frac{1}{2}$,
+- $P(B_2) = \frac{3}{4}$,
+- $P(C_2) = \frac{1}{2}$,
 
-For one toss, there are 2 possible outcomes, so each one has probability \(\frac{1}{2}\).
+- $P(A_3) = \frac{3}{8}$,
+- $P(B_3) = \frac{7}{8}$,
+- $P(C_3) = \frac{1}{4}$,
 
-For two tosses, there are 4 possible outcomes, so each one has probability \(\frac{1}{4}\).
+and for the additional event:
 
-For three tosses, there are 8 possible outcomes, so each one has probability \(\frac{1}{8}\).
+- $P(D_3) = \frac{3}{8}$.
 
-An event is simply a subset of the sample space.
+## Interpretation
 
-So, to calculate the probability of an event, we use:
+This task shows how probabilities are computed when all elementary outcomes are equally likely.
 
-\[
-P(A)=\frac{\text{number of favorable outcomes}}{\text{total number of outcomes}}
-\]
+The main idea is simple: first identify the sample space, then describe each event as a subset of that sample space, and finally count how many outcomes belong to the event.
 
-For example, in two tosses, the event “exactly one Head” is \(\{HT, TH\}\), so its probability is:
-
-\[
-\frac{2}{4}=\frac{1}{2}
-\]
+For a fair coin, the probability of an event is always the number of favorable outcomes divided by the total number of possible outcomes.
