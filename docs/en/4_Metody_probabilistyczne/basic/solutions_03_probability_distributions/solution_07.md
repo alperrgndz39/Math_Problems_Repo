@@ -1,4 +1,4 @@
-# Task 02 – Hypergeometric Probability of Defective Bulbs
+# Task 07 – Hypergeometric Probability of Defective Bulbs
 
 ## Problem Statement
 
